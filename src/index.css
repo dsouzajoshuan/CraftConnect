@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream text-charcoal font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5 {
+    @apply font-serif;
+  }
+
+  *:focus-visible {
+    @apply outline-none ring-2 ring-forest ring-offset-2;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-forest text-white font-semibold px-6 py-3 rounded-full hover:bg-deep-green active:scale-95 transition-all duration-200 focus-visible:ring-2 focus-visible:ring-forest;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 border-2 border-forest text-forest font-semibold px-6 py-3 rounded-full hover:bg-forest hover:text-white active:scale-95 transition-all duration-200;
+  }
+
+  .btn-terracotta {
+    @apply inline-flex items-center gap-2 bg-terracotta text-white font-semibold px-6 py-3 rounded-full hover:brightness-90 active:scale-95 transition-all duration-200;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-sm border border-sage/50 overflow-hidden;
+  }
+
+  .input {
+    @apply w-full px-4 py-3 rounded-xl border border-sage bg-white text-charcoal text-sm placeholder:text-charcoal/40 focus:outline-none focus:border-forest focus:ring-2 focus:ring-forest/20 transition-all;
+  }
+
+  .label {
+    @apply block text-sm font-medium text-charcoal mb-1.5;
+  }
+
+  .section-title {
+    @apply font-serif font-bold text-3xl md:text-4xl text-charcoal leading-tight;
+  }
+
+  .section-subtitle {
+    @apply text-charcoal/60 text-base md:text-lg leading-relaxed;
+  }
+
+  .page-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .artisan-layout {
+    @apply flex min-h-screen;
+  }
+
+  .artisan-content {
+    @apply flex-1 p-4 md:p-8 overflow-x-hidden;
+  }
+}
